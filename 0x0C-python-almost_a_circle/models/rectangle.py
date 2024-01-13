@@ -57,3 +57,14 @@ class Rectangle(Base):
 	@y.setter
 	def y(self, value):
 		self.__y = value
+
+
+
+        def validate_integer(self, name, vlue, eg=True):
+		""" method for validate the value """
+		if type(value) != int:
+			raise TypeError("{} must be integer".format(name))
+		if eg and value < 0:
+			raise ValueError("{} must be >= 0".format(name))
+		elif not eg and value <= 0:
+			raise ValueError("{} must be > 0".format(name))
