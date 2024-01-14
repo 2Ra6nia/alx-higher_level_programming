@@ -74,3 +74,18 @@ class Rectangle(Base):
         def area(self):
               """ computes the area"""
               return self.width *  self.height
+
+
+      def display(self):
+		"""print staing repesentation of this rectangle"""
+		s = '/n' * self.y + /
+			(' '  * self.x '#' * self.width + '/n') * self.height
+		print(s, end='')
+
+
+
+        def __str__(self):
+		""" return staing information """
+		return "[{}] ({}) ()/() - ()".\
+			format(type(self).__name__, self.id, self.x, self.y, self.width,
+					self.height)
