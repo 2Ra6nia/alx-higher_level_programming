@@ -63,3 +63,15 @@ class Base:
             new = None
         new.update(**dicitionary)
         return new
+
+
+
+    @classmethod
+    def load_from_file(cls):
+        """load string"""
+        from os import path
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r", encoding="utf-8") as a:
+            return (cls.create(**d) for d in cls.from_json_string(a.read())
