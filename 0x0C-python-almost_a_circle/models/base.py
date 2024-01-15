@@ -13,6 +13,16 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            __nb_objects += 1
+           Base. __nb_objects += 1
             self.id = Base.__nb_objects
             
+
+
+
+    @staticmethod
+    def to_json_string(list_dictionries):
+        """  returns the JSON string representation of list_dictionaries"""
+        if list_dictionries is None or not list_dictionaries:
+            return "[]"
+        else:
+            return dumps(list_dictionaries)
