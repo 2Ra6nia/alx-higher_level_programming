@@ -50,3 +50,10 @@ class square(Rectangle):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
+
+
+
+    def to_dictionary(self):
+        """ return dicitionary for square class"""
+        return ("id": self.id, "size": self.size,
+                "x": self.x, "y": self.y)
